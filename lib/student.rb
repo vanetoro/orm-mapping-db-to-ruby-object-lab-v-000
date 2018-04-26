@@ -78,7 +78,7 @@ class Student
 
       DB[:conn].execute(sql,picked_grade)
     end
-    
+
 
   def self.all
     sql = <<-SQL
