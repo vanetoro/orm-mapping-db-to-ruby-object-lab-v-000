@@ -71,6 +71,15 @@ class Student
       end.first
   end
 
+  def all_students_in_grade_X(picked_grade)
+    sql = <<-SQL
+      SELECT * FROM students WHERE grade = ?
+      SQL
+
+      DB[:conn].execute(sql,picked_grade)
+    end
+    
+
   def self.all
     sql = <<-SQL
       SELECT * FROM students
