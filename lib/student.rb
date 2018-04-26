@@ -65,7 +65,7 @@ class Student
       SELECT * FROM students LIMIT 1
     SQL
 
-      DB[:conn].execute(sql)
+      DB[:conn].execute(sql).flatten
   end
 
   def self.all
