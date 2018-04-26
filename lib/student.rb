@@ -60,6 +60,14 @@ class Student
     DB[:conn].execute(sql,num)
   end
 
+  def self.first_student_in_grade_10
+    sql = <<-SQL
+      SELECT * FROM students LIMIT 1
+    SQL
+
+      DB[:conn].execute(sql)
+  end  
+
   def self.all
     sql = <<-SQL
       SELECT * FROM students
